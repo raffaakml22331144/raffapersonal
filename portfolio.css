@@ -1,0 +1,257 @@
+﻿/* =============================================
+   PORTFOLIO.CSS - Portfolio Page Only
+   ============================================= */
+
+.portfolio-intro {
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--blue-light);
+  margin-bottom: 2rem;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+/* 2 kartu terakhir di-center jika jumlah ganjil */
+.portfolio-grid .portfolio-card:nth-last-child(-n+2):first-child,
+.portfolio-grid .portfolio-card:nth-last-child(-n+2):first-child ~ .portfolio-card {
+  grid-column: auto;
+}
+.portfolio-grid:has(.portfolio-card:nth-child(odd):last-child) {
+  justify-items: center;
+}
+.portfolio-grid .portfolio-card:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+  max-width: 360px;
+  justify-self: center;
+}
+/* Khusus 2 kartu terakhir center jika baris terakhir tidak penuh */
+.portfolio-last-row {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.portfolio-card {
+  background: var(--blue-card);
+  border: 3px solid var(--blue-border);
+  overflow: hidden;
+  transition: all 0.2s;
+}
+.portfolio-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(91,184,232,0.25);
+}
+
+.portfolio-img-wrap {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+  background: var(--blue-deeper);
+}
+.portfolio-img-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--blue-light);
+  font-size: 1rem;
+  gap: 6px;
+}
+.img-icon { font-size: 2.5rem; }
+.img-sub { font-size: 0.85rem; color: var(--blue-mid); }
+
+.portfolio-img {
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+}
+
+.portfolio-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10,22,40,0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.portfolio-card:hover .portfolio-overlay { opacity: 1; }
+
+.overlay-btn {
+  font-family: var(--pixel-font);
+  font-size: 0.55rem;
+  color: var(--accent2);
+  border: 3px solid var(--accent2);
+  padding: 10px 18px;
+  text-decoration: none;
+  transition: all 0.15s;
+}
+.overlay-btn:hover { background: var(--accent2); color: var(--blue-deeper); }
+
+.portfolio-info { padding: 1.2rem; }
+
+.portfolio-tag {
+  display: inline-block;
+  font-family: var(--pixel-font);
+  font-size: 0.4rem;
+  color: var(--accent);
+  border: 2px solid var(--accent);
+  padding: 3px 8px;
+  margin-bottom: 0.6rem;
+}
+.portfolio-title {
+  font-family: var(--pixel-font);
+  font-size: 0.65rem;
+  color: var(--white);
+  margin-bottom: 0.6rem;
+  line-height: 1.5;
+}
+.portfolio-desc {
+  font-size: 1rem;
+  color: var(--blue-light);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+.portfolio-links {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+}
+
+/* Tombol Lihat Karya - kuning */
+.btn-karya {
+  background: var(--accent2);
+  color: var(--blue-deeper);
+  border-color: var(--accent2);
+}
+.btn-karya:hover {
+  background: #ffd000;
+  border-color: #ffd000;
+  box-shadow: 4px 4px 0 var(--blue-deeper);
+  transform: translate(-2px,-2px);
+}
+
+/* Tombol Lihat Gambar di overlay */
+.overlay-btn {
+  font-family: var(--pixel-font);
+  font-size: 0.55rem;
+  color: var(--blue-deeper);
+  background: var(--accent2);
+  border: 3px solid var(--accent2);
+  padding: 10px 18px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.overlay-btn:hover {
+  background: #ffd000;
+  border-color: #ffd000;
+  box-shadow: 4px 4px 0 rgba(0,0,0,0.4);
+  transform: translate(-2px,-2px);
+}
+
+/* --- LIGHTBOX --- */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background: rgba(5, 13, 26, 0.92);
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+.lightbox.active {
+  display: flex;
+  animation: lbFadeIn 0.2s ease;
+}
+@keyframes lbFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.lightbox-box {
+  background: var(--blue-card);
+  border: 3px solid var(--blue-border);
+  max-width: 860px;
+  width: 100%;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  animation: lbSlideIn 0.2s ease;
+  position: relative;
+}
+@keyframes lbSlideIn {
+  from { transform: translateY(30px) scale(0.97); opacity: 0; }
+  to   { transform: translateY(0)    scale(1);    opacity: 1; }
+}
+
+.lightbox-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  border-bottom: 3px solid var(--blue-border);
+  background: rgba(8, 20, 50, 0.9);
+  flex-shrink: 0;
+}
+.lightbox-title {
+  font-family: var(--pixel-font);
+  font-size: 0.55rem;
+  color: var(--accent2);
+  letter-spacing: 1px;
+}
+.lightbox-close {
+  font-family: var(--pixel-font);
+  font-size: 0.7rem;
+  background: transparent;
+  color: var(--accent);
+  border: 2px solid var(--accent);
+  padding: 4px 10px;
+  cursor: pointer;
+  transition: all 0.15s;
+  line-height: 1;
+}
+.lightbox-close:hover {
+  background: var(--accent);
+  color: var(--blue-deeper);
+}
+
+.lightbox-img-wrap {
+  overflow: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  padding: 1rem;
+  flex: 1;
+}
+.lightbox-img {
+  max-width: 100%;
+  max-height: 70vh;
+  object-fit: contain;
+  border: 2px solid var(--blue-border);
+  display: block;
+}
+.lightbox-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  color: var(--blue-light);
+  font-size: 1rem;
+  text-align: center;
+  padding: 2rem;
+}

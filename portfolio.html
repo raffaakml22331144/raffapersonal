@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio - Raffa Akmal Nugraha</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="portfolio.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323:wght@400&display=swap" rel="stylesheet"/>
+</head>
+<body>
+  <canvas id="bgCanvas"></canvas>
+
+  <nav class="navbar">
+    <div class="nav-logo">
+      <span class="pixel-bracket">&lt;</span>
+      <span class="nav-name">Raffa</span>
+      <span class="pixel-bracket">/&gt;</span>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="about.html" class="nav-link">About</a></li>
+      <li><a href="skills.html" class="nav-link">Skills</a></li>
+      <li><a href="portfolio.html" class="nav-link active">Portfolio</a></li>
+      <li><a href="cv.html" class="nav-link">CV</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <main class="page-content">
+    <div class="page-header">
+      <h2 class="page-title"><span class="title-icon">&#128193;</span> Portfolio</h2>
+      <div class="title-underline"></div>
+    </div>
+
+    <p class="portfolio-intro">Berikut adalah karya dan proyek yang pernah saya buat.</p>
+
+    <div class="portfolio-grid">
+      <div class="portfolio-card">
+        <div class="portfolio-img-wrap">
+          <div class="portfolio-img-placeholder">
+            <div class="img-icon">&#128444;&#65039;</div>
+            <p>Screenshot Karya</p>
+            <p class="img-sub">Ganti dengan foto karya</p>
+          </div>
+          <img src="Screenshot 2026-05-06 175107.png" alt="Desain Brief Client" class="portfolio-img" onerror="this.style.display='none'"/>
+          <div class="portfolio-overlay">
+            <button class="overlay-btn" onclick="openLightbox('Screenshot 2026-05-06 175107.png', 'Desain Brief Client')">&#128247; Lihat Gambar</button>
+          </div>
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-tag">Design</div>
+          <h3 class="portfolio-title">Desain Brief Client</h3>
+          <p class="portfolio-desc">Jadi saat itu ada tugas dari jurusan untuk mendesain beberapa produk. Proyek ini mengasah kemampuan desain dan kreativitas saya.</p>
+          <div class="portfolio-links">
+            <a href="https://drive.google.com/file/d/1214keIn8FbvmcgknQR54Gy1Ijq7VDF8o/view?usp=sharing" target="_blank" class="btn-pixel btn-small btn-karya">&#128279; Lihat Karya</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="portfolio-card">
+        <div class="portfolio-img-wrap">
+          <div class="portfolio-img-placeholder">
+            <div class="img-icon">&#128444;&#65039;</div>
+            <p>Screenshot Karya</p>
+            <p class="img-sub">Ganti dengan foto karya</p>
+          </div>
+          <img src="Screenshot 2026-05-06 175232.png" alt="Website Kelompok" class="portfolio-img" onerror="this.style.display='none'"/>
+          <div class="portfolio-overlay">
+            <button class="overlay-btn" onclick="openLightbox('Screenshot 2026-05-06 175232.png', 'Website Kelompok')">&#128247; Lihat Gambar</button>
+          </div>
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-tag">Web Dev</div>
+          <h3 class="portfolio-title">Website Kelompok</h3>
+          <p class="portfolio-desc">Ini juga merupakan tugas website dari jurusan saya dan teman saya membuat website ini dengan tema Memancing / Fishing.</p>
+          <div class="portfolio-links">
+            <a href="https://strikespot.page.gd" target="_blank" class="btn-pixel btn-small btn-karya">&#128279; Lihat Karya</a>
+          </div>
+        </div>
+      </div>
+      <div class="portfolio-card">
+        <div class="portfolio-img-wrap">
+          <div class="portfolio-img-placeholder">
+            <div class="img-icon">&#128444;&#65039;</div>
+            <p>Screenshot Karya</p>
+            <p class="img-sub">Ganti dengan foto karya</p>
+          </div>
+          <img src="image copy 2.png" alt="Talkshow Lawphoria" class="portfolio-img" onerror="this.style.display='none'"/>
+          <div class="portfolio-overlay">
+            <button class="overlay-btn" onclick="openLightbox('image copy 2.png', 'Sertifikat Talkshow Lawphoria 2025')">&#128247; Lihat Gambar</button>
+          </div>
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-tag">Sertifikat</div>
+          <h3 class="portfolio-title">Talkshow Lawphoria 2025</h3>
+          <p class="portfolio-desc">Terpilih menjadi perwakilan dari SMKN 7 Semarang untuk mengikuti Talkshow Lawphoria yang berisi tentang materi Peran Hukum dalam era Artificial Intelligence.</p>
+          <div class="portfolio-links">
+            <button class="btn-pixel btn-small btn-karya" onclick="openLightbox('image copy 2.png', 'Sertifikat Talkshow Lawphoria 2025')">&#128247; Lihat Gambar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="portfolio-card">
+        <div class="portfolio-img-wrap">
+          <div class="portfolio-img-placeholder">
+            <div class="img-icon">&#128444;&#65039;</div>
+            <p>Screenshot Karya</p>
+            <p class="img-sub">Ganti dengan foto karya</p>
+          </div>
+          <img src="SERTIFIKAT HOC (1).jpg" alt="Karya 4" class="portfolio-img" onerror="this.style.display='none'"/>
+          <div class="portfolio-overlay">
+            <button class="overlay-btn" onclick="openLightbox('SERTIFIKAT HOC (1).jpg', 'Sertifikat HOC')">&#128247; Lihat Gambar</button>
+          </div>
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-tag">Sertifikat</div>
+          <h3 class="portfolio-title">Seritifikat Hour of Code</h3>
+          <p class="portfolio-desc">Jadi saat itu, saya mendapatkan tugas dari Jurusan untuk menyelesaikan games dari website Hour of Code</p>
+          <div class="portfolio-links">
+            <button class="btn-pixel btn-small btn-karya" onclick="openLightbox('SERTIFIKAT HOC (1).jpg', 'Sertifikat HOC')">&#128247; Lihat Gambar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="portfolio-card">
+        <div class="portfolio-img-wrap">
+          <div class="portfolio-img-placeholder">
+            <div class="img-icon">&#128444;&#65039;</div>
+            <p>Sertifikat IT Essentials 8</p>
+            <p class="img-sub">Ganti dengan foto karya</p>
+          </div>
+          <img src="Screenshot 2026-05-14 112232.png" alt="Sertifikat IT Essentials 8" class="portfolio-img" onerror="this.style.display='none'"/>
+          <div class="portfolio-overlay">
+            <button class="overlay-btn" onclick="openLightbox('Screenshot 2026-05-14 112232.png', 'Sertifikat IT Essentials 8')">&#128247; Lihat Gambar</button>
+          </div>
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-tag">Sertifikat</div>
+          <h3 class="portfolio-title">Sertifikat IT Essentials 8</h3>
+          <p class="portfolio-desc">Jadi saat itu, saya mendapatkan tugas dari Jurusan untuk menyelesaikan semua persoalan dari website Cisco Networking Academy</p>
+          <div class="portfolio-links">
+            <button class="btn-pixel btn-small btn-karya" onclick="openLightbox('Screenshot 2026-05-14 112232.png', 'Sertifikat IT Essentials 8')">&#128247; Lihat Gambar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="portfolio-card">
+        <div class="portfolio-img-wrap">
+          <div class="portfolio-img-placeholder">
+            <div class="img-icon">&#128444;&#65039;</div>
+            <p>Completed Tasks</p>
+            <p class="img-sub">Ganti dengan foto karya</p>
+          </div>
+          <img src="Untitled design.png" alt="Karya 6" class="portfolio-img" onerror="this.style.display='none'"/>
+          <div class="portfolio-overlay">
+            <button class="overlay-btn" onclick="openLightbox('Untitled design.png', 'Tugas SOC dan Kripto Failures')">&#128247; Lihat Gambar</button>
+          </div>
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-tag">Completed Tasks</div>
+          <h3 class="portfolio-title">Tugas SOC dan Krypto Failures</h3>
+          <p class="portfolio-desc">Jadi saat itu, saya mendapatkan tugas dari Jurusan untuk menyelesaikan tugas dari website Try Hack Me</p>
+          <div class="portfolio-links">
+            <button class="btn-pixel btn-small btn-karya" onclick="openLightbox('Untitled design.png', 'Tugas SOC dan Kripto Failures')">&#128247; Lihat Gambar</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 2 kartu terakhir di-center -->
+    <div class="portfolio-last-row">
+      <div class="portfolio-card">
+        <div class="portfolio-img-wrap">
+          <div class="portfolio-img-placeholder">
+            <div class="img-icon">&#128444;&#65039;</div>
+            <p>Screenshot Karya</p>
+            <p class="img-sub">Ganti dengan foto karya</p>
+          </div>
+          <img src="image copy 3.png" alt="Website Kelompok 2" class="portfolio-img" onerror="this.style.display='none'"/>
+          <div class="portfolio-overlay">
+            <button class="overlay-btn" onclick="openLightbox('image copy 3.png', 'Website Kelompok')">&#128247; Lihat Gambar</button>
+          </div>
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-tag">Web Dev</div>
+          <h3 class="portfolio-title">Website Kelompok</h3>
+          <p class="portfolio-desc">Tugas Membuat Website Sejarah tentang materi era Reformasi</p>
+          <div class="portfolio-links">
+            <a href="https://imperium-reformasi-t0gg.arcada.app" target="_blank" class="btn-pixel btn-small btn-karya">&#128279; Lihat Karya</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="portfolio-card">
+        <div class="portfolio-img-wrap">
+          <div class="portfolio-img-placeholder">
+            <div class="img-icon">&#128444;&#65039;</div>
+            <p>Screenshot Karya</p>
+            <p class="img-sub">Ganti dengan foto karya</p>
+          </div>
+          <img src="POSTER HUT RI ADOBE 1 RAFFA.jpg" alt="Karya 10" class="portfolio-img" onerror="this.style.display='none'"/>
+          <div class="portfolio-overlay">
+            <button class="overlay-btn" onclick="openLightbox('POSTER HUT RI ADOBE 1 RAFFA.jpg', 'Karya 10')">&#128247; Lihat Gambar</button>
+          </div>
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-tag">Tugas Desain</div>
+          <h3 class="portfolio-title">Desain Poster Adobe Illustrator</h3>
+          <p class="portfolio-desc">Tugas Membuat 15 Poster kemerdekaan menggunakan Adobe Illustrator</p>
+          <div class="portfolio-links">
+            <a href="https://drive.google.com/drive/folders/1tCxIBRnQRTyoNwi_v92X--xeCHAf2YX7?usp=drive_link" target="_blank" class="btn-pixel btn-small btn-karya">&#128279; Lihat Karya</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- LIGHTBOX POP-UP -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+    <div class="lightbox-box">
+      <div class="lightbox-header">
+        <span class="lightbox-title" id="lightboxTitle"></span>
+        <button class="lightbox-close" onclick="closeLightbox()">&#10005;</button>
+      </div>
+      <div class="lightbox-img-wrap">
+        <img src="" alt="" id="lightboxImg" class="lightbox-img"/>
+        <div class="lightbox-placeholder" id="lightboxPlaceholder">
+          <div style="font-size:3rem">&#128444;&#65039;</div>
+          <p>Gambar tidak tersedia</p>
+          <p style="font-size:0.85rem;color:var(--blue-mid)">Letakkan file gambar di folder yang sama</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="pixel-footer">
+    <p>&#169; 2026 Raffa Akmal Nugraha &nbsp;|&nbsp;
+      <span class="footer-quote">"Capek itu wajar, nyerah itu pilihan."</span>
+    </p>
+  </footer>
+
+  <script src="bg.js"></script>
+  <script src="main.js"></script>
+  <script>
+    function openLightbox(src, title) {
+      const lb = document.getElementById('lightbox');
+      const img = document.getElementById('lightboxImg');
+      const ph  = document.getElementById('lightboxPlaceholder');
+      const ttl = document.getElementById('lightboxTitle');
+
+      ttl.textContent = title;
+      img.src = src;
+      img.alt = title;
+      img.style.display = 'none';
+      ph.style.display  = 'flex';
+
+      img.onload = function() {
+        img.style.display = 'block';
+        ph.style.display  = 'none';
+      };
+      img.onerror = function() {
+        img.style.display = 'none';
+        ph.style.display  = 'flex';
+      };
+
+      lb.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox(e) {
+      if (e && e.target !== document.getElementById('lightbox') && !e.target.classList.contains('lightbox-close')) return;
+      document.getElementById('lightbox').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  </script>
+</body>
+</html>

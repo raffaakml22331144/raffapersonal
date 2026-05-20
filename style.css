@@ -1,0 +1,230 @@
+﻿/* =============================================
+   STYLE.CSS - GLOBAL STYLES
+   Navbar, Footer, Reset, Base, Canvas
+   ============================================= */
+
+/* --- RESET & BASE --- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --blue-light:  #a8d8f0;
+  --blue-mid:    #5bb8e8;
+  --blue-dark:   #1a6fa8;
+  --blue-deeper: #0d3d6b;
+  --blue-bg:     #0a1628;
+  --blue-card:   rgba(10, 40, 80, 0.82);
+  --blue-border: #3a8fc4;
+  --accent:      #7ee8fa;
+  --accent2:     #ffe066;
+  --white:       #e8f4ff;
+  --pixel-font:  'Press Start 2P', monospace;
+  --vt-font:     'VT323', monospace;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--vt-font);
+  background: var(--blue-bg);
+  color: var(--white);
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-size: 18px;
+}
+
+/* --- CANVAS BACKGROUND --- */
+#bgCanvas {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* --- NAVBAR --- */
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  height: 64px;
+  background: rgba(8, 20, 50, 0.95);
+  border-bottom: 3px solid var(--blue-border);
+  image-rendering: pixelated;
+}
+
+.nav-logo {
+  font-family: var(--pixel-font);
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  color: var(--accent);
+}
+.pixel-bracket { color: var(--blue-mid); }
+.nav-name { color: var(--accent2); margin: 0 4px; }
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 0.2rem;
+}
+
+.nav-link {
+  font-family: var(--pixel-font);
+  font-size: 0.55rem;
+  color: var(--blue-light);
+  text-decoration: none;
+  padding: 6px 12px;
+  border: 2px solid transparent;
+  transition: all 0.15s;
+  image-rendering: pixelated;
+  letter-spacing: 1px;
+}
+.nav-link:hover,
+.nav-link.active {
+  color: var(--accent2);
+  border-color: var(--accent2);
+  background: rgba(255,224,102,0.08);
+  box-shadow: 0 0 8px var(--accent2);
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+.hamburger span {
+  display: block;
+  width: 26px; height: 3px;
+  background: var(--accent);
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* --- PAGE CONTENT --- */
+.page-content {
+  position: relative;
+  z-index: 10;
+  padding: 90px 2rem 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* --- PAGE HEADER (dipakai About, Skills, Portfolio, CV) --- */
+.page-header { text-align: center; margin-bottom: 2.5rem; }
+.page-title {
+  font-family: var(--pixel-font);
+  font-size: 1.1rem;
+  color: var(--accent);
+  text-shadow: 0 0 12px var(--blue-mid);
+  letter-spacing: 2px;
+}
+.title-icon { margin-right: 10px; }
+.title-underline {
+  width: 120px; height: 4px;
+  background: linear-gradient(90deg, var(--blue-mid), var(--accent));
+  margin: 12px auto 0;
+  image-rendering: pixelated;
+}
+
+/* --- SHARED BUTTONS --- */
+.btn-pixel {
+  font-family: var(--pixel-font);
+  font-size: 0.55rem;
+  padding: 10px 18px;
+  border: 3px solid;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.15s;
+  letter-spacing: 1px;
+  image-rendering: pixelated;
+}
+.btn-primary {
+  background: var(--blue-mid);
+  color: var(--blue-deeper);
+  border-color: var(--accent);
+}
+.btn-primary:hover {
+  background: var(--accent);
+  box-shadow: 4px 4px 0 var(--blue-deeper);
+  transform: translate(-2px,-2px);
+}
+.btn-secondary {
+  background: transparent;
+  color: var(--accent2);
+  border-color: var(--accent2);
+}
+.btn-secondary:hover {
+  background: rgba(255,224,102,0.15);
+  box-shadow: 4px 4px 0 var(--blue-deeper);
+  transform: translate(-2px,-2px);
+}
+.btn-small { font-size: 0.5rem; padding: 8px 14px; }
+
+/* --- SHARED SKILL BAR (dipakai Skills & CV) --- */
+.skill-bar {
+  width: 100%; height: 18px;
+  background: var(--blue-deeper);
+  border: 2px solid var(--blue-border);
+  position: relative;
+  overflow: hidden;
+}
+.skill-fill {
+  height: 100%;
+  width: 0;
+  transition: width 1.2s cubic-bezier(0.4,0,0.2,1);
+  position: relative;
+}
+.skill-fill::after {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 4px; height: 100%;
+  background: rgba(255,255,255,0.4);
+}
+.html-fill  { background: linear-gradient(90deg, #e34c26, #f06529); }
+.css-fill   { background: linear-gradient(90deg, #264de4, #2965f1); }
+.js-fill    { background: linear-gradient(90deg, #f7df1e, #f0db4f); }
+.cisco-fill { background: linear-gradient(90deg, #1ba0d7, #7ee8fa); }
+.edit-fill  { background: linear-gradient(90deg, #8b5cf6, #c084fc); }
+.winbox-fill{ background: linear-gradient(90deg, #0f7a3c, #22c55e); }
+
+/* --- HIGHLIGHT TEXT (dipakai About & CV) --- */
+.highlight-text { color: var(--accent2); font-weight: bold; }
+
+/* --- FOOTER --- */
+.pixel-footer {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  padding: 1.2rem;
+  border-top: 3px solid var(--blue-border);
+  background: rgba(8,20,50,0.95);
+  font-size: 0.9rem;
+  color: var(--blue-mid);
+}
+.footer-quote { color: var(--accent); font-style: italic; }
+
+/* --- RESPONSIVE GLOBAL --- */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 64px; left: 0; right: 0;
+    background: rgba(8,20,50,0.98);
+    flex-direction: column;
+    padding: 1rem;
+    border-bottom: 3px solid var(--blue-border);
+    gap: 0.5rem;
+  }
+  .nav-links.open { display: flex; }
+  .hamburger { display: flex; }
+}
+
+@media (max-width: 480px) {
+  .page-title { font-size: 0.8rem; }
+}

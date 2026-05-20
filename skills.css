@@ -1,0 +1,92 @@
+﻿/* =============================================
+   SKILLS.CSS - Skills Page Only
+   ============================================= */
+
+.skills-container { max-width: 800px; margin: 0 auto; }
+
+.skills-intro {
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--blue-light);
+  margin-bottom: 2rem;
+}
+
+.skills-grid { display: flex; flex-direction: column; gap: 1.2rem; }
+
+.skill-card {
+  background: var(--blue-card);
+  border: 3px solid var(--blue-border);
+  padding: 1.2rem 1.5rem;
+  transition: all 0.2s;
+}
+.skill-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 16px rgba(126,232,250,0.2);
+}
+
+.skill-card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.8rem;
+}
+
+.skill-icon-box {
+  width: 48px; height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--pixel-font);
+  font-size: 0.5rem;
+  font-weight: bold;
+  border: 3px solid;
+  flex-shrink: 0;
+}
+.html-icon  { background: #e34c26; border-color: #f06529; color: #fff; }
+.css-icon   { background: #264de4; border-color: #2965f1; color: #fff; }
+.js-icon    { background: #f7df1e; border-color: #f0db4f; color: #333; }
+.cisco-icon { background: #1ba0d7; border-color: #0d7ab5; color: #fff; font-size: 1.2rem; }
+.edit-icon  { background: #8b5cf6; border-color: #7c3aed; color: #fff; font-size: 1.2rem; }
+.winbox-icon{ background: #0f7a3c; border-color: #12a050; color: #fff; font-size: 1.2rem; }
+
+.skill-info { flex: 1; }
+.skill-name {
+  display: block;
+  font-family: var(--pixel-font);
+  font-size: 0.55rem;
+  color: var(--white);
+  margin-bottom: 4px;
+}
+.skill-percent {
+  font-family: var(--pixel-font);
+  font-size: 0.7rem;
+  color: var(--accent2);
+}
+
+.skill-bar-wrap { margin-bottom: 6px; }
+
+.skill-level-label {
+  font-family: var(--pixel-font);
+  font-size: 0.4rem;
+  color: var(--blue-mid);
+  text-align: right;
+}
+
+.skills-footer-deco { text-align: center; margin-top: 2rem; }
+.char-speech {
+  display: inline-block;
+  background: var(--blue-card);
+  border: 3px solid var(--accent);
+  padding: 10px 20px;
+  font-family: var(--pixel-font);
+  font-size: 0.55rem;
+  color: var(--accent);
+  position: relative;
+}
+.char-speech::before {
+  content: '';
+  position: absolute;
+  bottom: -12px; left: 20px;
+  border: 6px solid transparent;
+  border-top-color: var(--accent);
+}

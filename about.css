@@ -1,0 +1,92 @@
+﻿/* =============================================
+   ABOUT.CSS - About Me Page Only
+   ============================================= */
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+.about-card-wide { grid-column: 1 / -1; }
+
+.about-card {
+  background: var(--blue-card);
+  border: 3px solid var(--blue-border);
+  padding: 1.5rem;
+  transition: all 0.2s;
+}
+.about-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 16px rgba(126,232,250,0.2);
+  transform: translateY(-3px);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid var(--blue-border);
+  padding-bottom: 0.8rem;
+}
+.card-icon { font-size: 1.4rem; }
+.card-header h3 {
+  font-family: var(--pixel-font);
+  font-size: 0.6rem;
+  color: var(--accent);
+  letter-spacing: 1px;
+}
+
+.card-text { font-size: 1.1rem; color: var(--blue-light); line-height: 1.7; }
+
+.info-row {
+  display: flex;
+  gap: 1rem;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(58,143,196,0.3);
+  font-size: 1.05rem;
+}
+.info-label { color: var(--blue-mid); min-width: 130px; }
+.info-value { color: var(--white); }
+
+.edu-timeline { display: flex; flex-direction: column; gap: 0.8rem; }
+.edu-item { display: flex; align-items: center; gap: 12px; }
+.edu-dot {
+  width: 12px; height: 12px;
+  background: var(--accent);
+  border: 2px solid var(--blue-border);
+  flex-shrink: 0;
+}
+.edu-info { display: flex; flex-direction: column; gap: 2px; }
+.edu-level { font-family: var(--pixel-font); font-size: 0.45rem; color: var(--accent2); }
+.edu-name { font-size: 1.1rem; color: var(--white); }
+
+.hobby-tags { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.hobby-tag {
+  background: rgba(91,184,232,0.15);
+  border: 2px solid var(--blue-border);
+  padding: 6px 12px;
+  font-size: 1rem;
+  color: var(--white);
+}
+
+.skills-split { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+.skill-type-title {
+  font-family: var(--pixel-font);
+  font-size: 0.5rem;
+  color: var(--accent2);
+  margin-bottom: 0.8rem;
+}
+.skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.8rem; }
+.skill-tag {
+  padding: 4px 10px;
+  font-size: 0.9rem;
+  border: 2px solid;
+}
+.skill-tag.soft { border-color: var(--accent); color: var(--accent); }
+.skill-tag.hard { border-color: var(--accent2); color: var(--accent2); }
+
+/* --- RESPONSIVE ABOUT --- */
+@media (max-width: 768px) {
+  .skills-split { grid-template-columns: 1fr; }
+}
